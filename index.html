@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مطعم ومخبازة وشواية العزعزي - العصيد وجميع المأكولات الشعبية، ودجاج الشواية على أصوله، وخبز ملوح طازج يومياً. مأرب - الشبواني - سوق مجمع السلام - جوار موقف سوق القات.">
+  <meta name="author" content="مطعم ومخبازة وشواية العزعزي">
+  <meta name="theme-color" content="#0B192C">
+  <meta property="og:title" content="مطعم ومخبازة وشواية العزعزي">
+  <meta property="og:description" content="الطعم الأصيل .. سرّ رضائكم. العصيد والمأكولات الشعبية ودجاج الشواية وخبز الملوح الطازج.">
+  <meta property="og:type" content="website">
+  <title>مطعم ومخبازة وشواية العزعزي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L4 20l1-4.5A8.5 8.5 0 1 1 21 11.5Z"/>
+      <path d="M8.7 7.7h1.4l.9 2.3-1.1 1a11 11 0 0 0 3 3l1-1.1 2.3.9v1.4c0 .7-.5 1.2-1.2 1.2-4-.4-7.2-3.6-7.6-7.6 0-.7.6-1.2 1.3-1.1Z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path d="M7 3h3l1.2 4-2 1.4a13 13 0 0 0 6.4 6.4L17 12.8l4 1.2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 5 5.2 2 2 0 0 1 7 3Z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+    <symbol id="i-map" viewBox="0 0 24 24">
+      <path d="m9 4 6 2 6-2v14l-6 2-6-2-6 2V6l6-2Z"/>
+      <path d="M9 4v14M15 6v14"/>
+    </symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <circle cx="9" cy="20" r="1.4"/>
+      <circle cx="18" cy="20" r="1.4"/>
+      <path d="M3 4h2l2.4 11h10.2l2.1-8H6"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6.5"/>
+      <path d="m20 20-4.2-4.2"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24">
+      <path d="M5 12h14"/>
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path d="M4 7h16M9 7V5h6v2M6 7l1 14h10l1-14M10 11v6M14 11v6"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5"/>
+      <path d="M12 7.5V12l3 2"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 19V5M6 11l6-6 6 6"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12.5 4.5 4.5L19 7.5"/>
+    </symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="m8 12.2 2.7 2.8L16 9.4"/>
+    </symbol>
+    <symbol id="i-chef" viewBox="0 0 24 24">
+      <path d="M7 12.5a4 4 0 1 1 1.2-7.8 4 4 0 0 1 7.6 0A4 4 0 1 1 17 12.5H7Z"/>
+      <path d="M7 12.5V19h10v-6.5M9.5 15.5h.01M14.5 15.5h.01"/>
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24">
+      <path d="M12 3s5.5 4.8 5.5 9.2a5.5 5.5 0 0 1-11 0c0-2 1-3.7 2.2-4.8 0 1.6.5 2.7 1.6 3.3 0-2.2.5-4.8 1.7-7.7Z"/>
+      <path d="M12 21a3.2 3.2 0 0 1-3.2-3.2c0-1.6 1.1-2.7 3.2-4.3 2.1 1.6 3.2 2.7 3.2 4.3A3.2 3.2 0 0 1 12 21Z"/>
+    </symbol>
+    <symbol id="i-bread" viewBox="0 0 24 24">
+      <path d="M4 11a4 4 0 0 1 4-4h8a4 4 0 0 1 0 8H8a4 4 0 0 1-4-4Z"/>
+      <path d="M7 12h10M9.5 9.5h.01M14.5 9.5h.01"/>
+    </symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24">
+      <path d="M3 11h18a9 9 0 0 1-18 0Z"/>
+      <path d="M8 7.5C8 6 9 5 10.5 5M13.5 7.5C13.5 6 14.5 5 16 5"/>
+    </symbol>
+    <symbol id="i-rice" viewBox="0 0 24 24">
+      <path d="M4 12h16a8 8 0 0 1-16 0Z"/>
+      <path d="M8 8.5 9 6M12 8.5V6M16 8.5 15 6M8.5 17.5h7"/>
+    </symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24">
+      <path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 8Z"/>
+      <path d="M5 8h14M9.5 4l1 4M14.5 4l-1 4"/>
+    </symbol>
+    <symbol id="i-chili" viewBox="0 0 24 24">
+      <path d="M15 5c1-1 2-1 3 0M15 5c.5 2 0 4-1.5 5.5C11 13 8 14 6 18c-1 1.5.2 3 1.8 2.6C12 19.5 15 16 16.5 12.5 17.5 10 17 7 15 5Z"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="15" rx="2"/>
+      <path d="M8 3v4M16 3v4M4 10h16"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="3.2"/>
+      <path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M15.5 5.2a3 3 0 0 1 0 5.6M17 13.8a5 5 0 0 1 3.5 4.7"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/>
+    </symbol>
+  </svg>
+
+  <a href="#home" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-item">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+        <span>واتساب الطلبات:</span>
+        <a href="https://wa.me/967777698379" target="_blank" rel="noopener noreferrer">777698379</a>
+      </div>
+      <div class="topbar-item topbar-phones">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <a href="tel:+967736436022">736436022</a>
+        <span class="topbar-sep" aria-hidden="true">•</span>
+        <a href="tel:+967718533177">718533177</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-row">
+      <a href="#home" class="brand" aria-label="مطعم ومخبازة وشواية العزعزي - الرئيسية">
+        <span class="brand-mark" aria-hidden="true">ع</span>
+        <span class="brand-text">
+          <span class="brand-name">العزعزي</span>
+          <span class="brand-sub">مطعم · مخبازة · شواية</span>
+        </span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="navMenu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="التنقل الرئيسي">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+          <li><a href="#features" class="nav-link">مميزاتنا</a></li>
+          <li><a href="#menu" class="nav-link">القائمة</a></li>
+          <li><a href="#reservation" class="nav-link">احجز طاولة</a></li>
+          <li><a href="#about" class="nav-link">من نحن</a></li>
+          <li><a href="#contact" class="nav-link">تواصل</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn btn-outline btn-sm btn-cart" id="cartToggleBtn">
+            <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+            السلة
+            <span class="cart-badge" id="cartBadge"></span>
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" id="quickOrderBtn">الطلب السريع</button>
+        </div>
+      </nav>
+
+      <button type="button" class="btn-cart-mobile" id="cartToggleMobile" aria-label="فتح سلة الطلبات">
+        <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+        <span class="cart-badge" id="cartBadgeMobile"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow hero-glow--1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--2" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow eyebrow--on-dark">الطعم الأصيل .. سرّ رضائكم</span>
+          <h1>مطعم ومخبازة وشواية <span>العزعزي</span></h1>
+          <p class="hero-sub">
+            ندعوكم لتذوق أشهى المأكولات؛ العصيد وجميع المأكولات الشعبية، ودجاج الشواية على أصوله،
+            وخبز ملوح طازج يومياً. <strong>زورونا .. وستجدون الطعم الذي يليق بكم.</strong>
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary btn-lg">
+              <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+              تصفح القائمة
+            </a>
+            <button type="button" class="btn btn-outline-light btn-lg" id="heroOrderBtn">
+              <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+              اطلب طبقك الآن
+            </button>
+          </div>
+          <ul class="hero-points">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> شيف متميز بأيدي ماهرة</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> دجاج شواية على أصوله</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> خبز ملوح طازج يومياً</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> العصيد وجميع المأكولات الشعبية</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="hero-plate">
+            <svg class="icon icon-hero"><use href="#i-bowl"></use></svg>
+          </div>
+          <div class="floating-chip chip-a">
+            <svg class="icon" aria-hidden="true"><use href="#i-flame"></use></svg>
+            دجاج شواية على أصوله
+          </div>
+          <div class="floating-chip chip-b">
+            <svg class="icon" aria-hidden="true"><use href="#i-bread"></use></svg>
+            خبز ملوح طازج
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">مميزاتنا</span>
+          <h2 class="section-title">لماذا تختار العزعزي؟</h2>
+          <p class="section-lead">أطباق شعبية أصيلة، شواية على أصولها، ومخبازة تعمل كل يوم لتصل إلى مائدتك طازجة.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-chef"></use></svg></span>
+            <h3>شيف متميز بأيدي ماهرة</h3>
+            <p>نخبة من الطهاة ذوي الخبرة يحضّرون أطباقك بعناية وإتقان، لتصل إلى مائدتك بأفضل طعم.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-flame"></use></svg></span>
+            <h3>دجاج شواية على أصوله</h3>
+            <p>تشكيلة من دجاج الشواية والمسلوق والحنيد والفحم، بطعم أصيل يرضي جميع الأذواق.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-bread"></use></svg></span>
+            <h3>خبز ملوح طازج يومياً</h3>
+            <p>خبز ملوح يُخبز طازجاً كل يوم في مخبازتنا ليصل إلى مائدتك ساخناً.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-bowl"></use></svg></span>
+            <h3>العصيد وجميع المأكولات الشعبية</h3>
+            <p>العصيد والروز والفتة والمأكولات الشعبية الأصيلة بأيدي ماهرة، بنكهة تلبي رغبة الجميع.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">قائمة الطعام</span>
+          <h2 class="section-title">اختر وجبتك المفضلة</h2>
+          <p class="section-lead">اثنا عشر صنفاً مختاراً بعناية بين الأطباق الشعبية والشواية والمقبلات والمشروبات.</p>
+        </div>
+
+        <div class="menu-controls">
+          <div class="search-box">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            <input type="search" id="menuSearch" placeholder="ابحث باسم الطبق..." aria-label="البحث في قائمة الطعام" autocomplete="off">
+          </div>
+          <div class="filter-row" role="group" aria-label="تصفية حسب التصنيف">
+            <button type="button" class="filter-btn active" data-filter="all">كل الأصناف</button>
+            <button type="button" class="filter-btn" data-filter="popular">أطباق شعبية</button>
+            <button type="button" class="filter-btn" data-filter="grilled">شواية ومشويات</button>
+            <button type="button" class="filter-btn" data-filter="appetizer">مقبلات</button>
+            <button type="button" class="filter-btn" data-filter="drinks">مشروبات</button>
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+        <div class="menu-empty" id="menuEmpty" role="status" hidden>
+          <strong>لا توجد أصناف تطابق بحثك</strong>
+          <p>جرّب كلمة أخرى أو اختر «كل الأصناف» لعرض القائمة كاملة.</p>
+        </div>
+        <p class="menu-note">الأسعار استرشادية بعملة الريال اليمني (ر.ي) وقابلة للتعديل — دون أي ضريبة في السلة.</p>
+      </div>
+    </section>
+
+    <section class="section section-dark reservation-section" id="reservation">
+      <div class="container reservation-grid">
+        <div class="reservation-copy reveal">
+          <span class="eyebrow eyebrow--on-dark">احجز طاولتك</span>
+          <h2 class="section-title">حجز بثلاث خطوات</h2>
+          <p class="section-lead">املأ البيانات التالية، ونتواصل معك عبر الهاتف أو واتساب لتأكيد حجزك في أقرب وقت.</p>
+          <div class="steps">
+            <div class="step">
+              <span class="step-num">١</span>
+              <div><h4>أدخل بياناتك</h4><p>الاسم، رقم الجوال، التاريخ والوقت.</p></div>
+            </div>
+            <div class="step">
+              <span class="step-num">٢</span>
+              <div><h4>نجهّز لك طاولتك</h4><p>مكان مناسب لعدد الأشخاص الذين اخترتهم.</p></div>
+            </div>
+            <div class="step">
+              <span class="step-num">٣</span>
+              <div><h4>تأكيد الحجز</h4><p>نتواصل معك هاتفياً أو عبر واتساب لتأكيد الحجز.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservation-form-box reveal">
+          <form class="reservation-form" id="reservationForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rName">الاسم الكامل <span class="req">*</span></label>
+                <input type="text" id="rName" name="name" required placeholder="ادخل اسمك" autocomplete="name" maxlength="80">
+              </div>
+              <div class="form-group">
+                <label for="rPhone">رقم الجوال <span class="req">*</span></label>
+                <input type="tel" id="rPhone" name="phone" required placeholder="7xxxxxxxx" maxlength="15" inputmode="numeric" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="rDate">التاريخ <span class="req">*</span></label>
+                <input type="date" id="rDate" name="date" required>
+              </div>
+              <div class="form-group">
+                <label for="rTime">الوقت <span class="req">*</span></label>
+                <select id="rTime" name="time" required>
+                  <option value="" selected disabled>اختر الوقت</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rGuests">عدد الأشخاص <span class="req">*</span></label>
+              <select id="rGuests" name="guests" required>
+                <option value="" selected disabled>اختر العدد</option>
+                <option value="1">١ شخص</option>
+                <option value="2">٢ أشخاص</option>
+                <option value="3">٣ أشخاص</option>
+                <option value="4">٤ أشخاص</option>
+                <option value="5">٥ أشخاص</option>
+                <option value="6-10">٦ إلى ١٠ أشخاص</option>
+                <option value="10+">أكثر من ١٠ أشخاص</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rNote">ملاحظة (اختياري)</label>
+              <textarea id="rNote" name="note" rows="2" placeholder="مثال: أرجو الحجز في مكان هادئ."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitReservation">طلب الحجز الآن</button>
+            <div class="form-error" id="reservationError" role="alert"></div>
+            <div class="form-success" id="reservationSuccess" role="status" aria-live="polite">
+              تم تسجيل طلب الحجز بنجاح. سيتواصل معك المطعم لتأكيد الحجز في أقرب وقت.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal" aria-hidden="true">
+          <div class="about-emblem">
+            <span class="about-badge">قصتنا</span>
+            <svg class="icon"><use href="#i-bowl"></use></svg>
+          </div>
+          <div class="about-facts">
+            <div class="fact"><strong>١٢</strong><span>صنفاً في القائمة</span></div>
+            <div class="fact"><strong>٤</strong><span>أقسام رئيسية</span></div>
+          </div>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">من نحن</span>
+          <h2 class="section-title">الطعم الأصيل .. سرّ رضائكم</h2>
+          <p class="about-para">
+            مطعم ومخبازة وشواية العزعزي في مأرب، نقدّم لكم العصيد وجميع المأكولات الشعبية،
+            ودجاج الشواية على أصوله، مع خبز ملوح طازج يومياً بأيدي شيف متميز.
+          </p>
+          <p class="about-para">
+            زورونا .. وستجدون الطعم الذي يليق بكم، وندعوكم لتذوق أشهى المأكولات في أجواء عائلية مريحة.
+          </p>
+          <ul class="about-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> العصيد على أصوله</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> دجاج شواية وحنيد وفحم</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> خبز ملوح طازج يومياً</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg> شيف متميز بأيدي ماهرة</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">تواصل معنا</span>
+          <h2 class="section-title">نحن قريبون منك</h2>
+          <p class="section-lead">اطلب مباشرة عبر واتساب، أو اتصل بنا، أو زرنا في موقعنا في مأرب.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></span>
+            <h3>واتساب الطلبات</h3>
+            <p><a href="https://wa.me/967777698379" target="_blank" rel="noopener noreferrer">777698379</a></p>
+          </div>
+          <div class="contact-card reveal">
+            <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+            <h3>الهاتف</h3>
+            <p>
+              <a href="tel:+967736436022">736436022</a><br>
+              <a href="tel:+967718533177">718533177</a>
+            </p>
+          </div>
+          <div class="contact-card reveal">
+            <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></span>
+            <h3>العنوان</h3>
+            <p>مأرب - الشبواني - سوق مجمع السلام<br>جوار موقف سوق القات</p>
+          </div>
+          <div class="contact-card reveal">
+            <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"></use></svg></span>
+            <h3>الموقع على الخريطة</h3>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%D9%85%D8%A3%D8%B1%D8%A8%20-%20%D8%A7%D9%84%D8%B4%D8%A8%D9%88%D8%A7%D9%86%D9%8A%20-%20%D8%B3%D9%88%D9%82%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85" target="_blank" rel="noopener noreferrer">افتح الخريطة</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#home" class="footer-brand" aria-label="العودة إلى الرئيسية">
+            <span class="brand-mark" aria-hidden="true">ع</span>
+            <span class="brand-text">
+              <span class="brand-name">العزعزي</span>
+              <span class="brand-sub">مطعم · مخبازة · شواية</span>
+            </span>
+          </a>
+          <p class="footer-desc">
+            زورونا .. وستجدون الطعم الذي يليق بكم.
+            العصيد وجميع المأكولات الشعبية، ودجاج الشواية على أصوله، وخبز ملوح طازج يومياً.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#features">مميزاتنا</a></li>
+            <li><a href="#menu">قائمة الطعام</a></li>
+            <li><a href="#reservation">احجز طاولة</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">تواصل</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">تواصل معنا</h3>
+          <div class="footer-contact">
+            <a href="https://wa.me/967777698379" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+              <span>واتساب الطلبات: 777698379</span>
+            </a>
+            <a href="tel:+967736436022" class="contact-link">
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <span>736436022</span>
+            </a>
+            <a href="tel:+967718533177" class="contact-link">
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <span>718533177</span>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=%D9%85%D8%A3%D8%B1%D8%A8%20-%20%D8%A7%D9%84%D8%B4%D8%A8%D9%88%D8%A7%D9%86%D9%8A%20-%20%D8%B3%D9%88%D9%82%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <span>مأرب - الشبواني - سوق مجمع السلام</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">اطلب الآن</h3>
+          <div class="footer-hours">
+            <span>واتساب الطلبات</span><span class="val">777698379</span>
+            <span>الاتصال</span><span class="val">736436022</span>
+          </div>
+          <button type="button" class="whatsapp-cta" id="whatsappCta">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            أرسل لنا عبر واتساب
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-rights">© 2026 مطعم ومخبازة وشواية العزعزي — جميع الحقوق محفوظة</div>
+        <div class="footer-dev">
+          <span>تطوير وهندسة الموقع:</span>
+          <strong>قاسم أمين العزعزي</strong>
+          <span class="footer-dev-sep" aria-hidden="true">—</span>
+          <a href="tel:+967773271464">هاتف: 773271464</a>
+        </div>
+        <button type="button" class="footer-top-link" id="footerTopLink">
+          العودة إلى الأعلى
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="toast" id="toast" role="status" aria-live="polite"></button>
+  <button type="button" class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة الطلبات" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <h2>سلة الطلبات</h2>
+        <p class="cart-sub">بدون ضريبة — الأسعار بعملة الريال اليمني</p>
+      </div>
+      <button type="button" class="cart-close" id="cartClose" aria-label="إغلاق السلة">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">الإجمالي</span>
+        <span class="cart-total-value" id="cartTotalValue">0 ر.ي</span>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="cartCheckout">إتمام الطلب</button>
+      <button type="button" class="cart-clear-btn" id="cartClear">
+        <svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg>
+        إزالة الكل
+      </button>
+    </div>
+  </aside>
+
+  <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle" aria-hidden="true">
+    <div class="order-modal-backdrop" id="orderModalBackdrop"></div>
+    <div class="order-modal-content">
+      <button type="button" class="order-modal-close" id="orderModalClose" aria-label="إغلاق">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+      <div id="orderModalContent">
+        <div id="modalFormBox">
+          <h2 class="order-modal-title" id="orderModalTitle">إتمام الطلب</h2>
+          <p class="order-modal-sub">الإجمالي: <strong id="modalTotal">0 ر.ي</strong> — دون أي ضريبة</p>
+          <form class="order-form" id="orderForm" novalidate>
+            <div class="order-form-grid">
+              <div class="form-group">
+                <label for="modalName">الاسم <span class="req">*</span></label>
+                <input type="text" id="modalName" required placeholder="ادخل الاسم" autocomplete="name" maxlength="80">
+              </div>
+              <div class="form-group">
+                <label for="modalPhone">رقم الجوال <span class="req">*</span></label>
+                <input type="tel" id="modalPhone" required placeholder="7xxxxxxxx" maxlength="15" inputmode="numeric" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="modalAddress">العنوان أو الموقع <span class="req">*</span></label>
+                <input type="text" id="modalAddress" required placeholder="الحي أو الشارع، أو اكتب: داخل المطعم">
+              </div>
+              <div class="form-group">
+                <label for="modalDelivery">طريقة الاستلام</label>
+                <select id="modalDelivery">
+                  <option value="pickup">داخل المطعم (استلام مباشر)</option>
+                  <option value="delivery">توصيل</option>
+                </select>
+              </div>
+            </div>
+            <div class="order-summary" id="orderSummary"></div>
+            <div class="order-actions">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+                إرسال الطلب عبر واتساب
+              </button>
+              <button type="button" class="btn btn-ghost btn-block" id="orderConfirmBtn">تأكيد الطلب داخل الموقع</button>
+            </div>
+          </form>
+        </div>
+        <div id="orderSuccessBox" class="order-success" role="status">
+          <span class="success-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg></span>
+          <h3>تم تأكيد طلبك</h3>
+          <p id="orderSuccessNote">تم استلام طلبك، وسنتواصل معك لتأكيده.</p>
+          <button type="button" class="btn btn-primary" id="orderSuccessClose">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
