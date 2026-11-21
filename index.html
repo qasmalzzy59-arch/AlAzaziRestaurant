@@ -171,12 +171,19 @@
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-bg-img" src="images/hero.jpg" alt="" loading="eager" decoding="async" onerror="this.remove()">
+        <div class="hero-overlay"></div>
+      </div>
       <div class="hero-glow hero-glow--1" aria-hidden="true"></div>
       <div class="hero-glow hero-glow--2" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <span class="eyebrow eyebrow--on-dark">الطعم الأصيل .. سرّ رضائكم</span>
-          <h1>مطعم ومخبازة وشواية <span>العزعزي</span></h1>
+          <div class="brand-nameplate">
+            <h1 class="brand-nameplate-name">مطعم ومخبازة وشواية العزعزي</h1>
+            <span class="brand-nameplate-tag"><span id="heroTypedText"></span><span class="hero-caret" aria-hidden="true"></span></span>
+          </div>
           <p class="hero-sub">
             ندعوكم لتذوق أشهى المأكولات؛ العصيد وجميع المأكولات الشعبية، ودجاج الشواية على أصوله،
             وخبز ملوح طازج يومياً. <strong>زورونا .. وستجدون الطعم الذي يليق بكم.</strong>
@@ -252,7 +259,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">قائمة الطعام</span>
           <h2 class="section-title">اختر وجبتك المفضلة</h2>
-          <p class="section-lead">اثنا عشر صنفاً مختاراً بعناية بين الأطباق الشعبية والشواية والمقبلات والمشروبات.</p>
+          <p class="section-lead">اثنان وعشرون صنفاً مختاراً بعناية بين الأطباق الشعبية والشواية والمخبازة والمقبلات والمشروبات، مع إمكانية اختيار التقسيم والكمية.</p>
         </div>
 
         <div class="menu-controls">
@@ -264,7 +271,8 @@
             <button type="button" class="filter-btn active" data-filter="all">كل الأصناف</button>
             <button type="button" class="filter-btn" data-filter="popular">أطباق شعبية</button>
             <button type="button" class="filter-btn" data-filter="grilled">شواية ومشويات</button>
-            <button type="button" class="filter-btn" data-filter="appetizer">مقبلات</button>
+            <button type="button" class="filter-btn" data-filter="bakery">مخبازة</button>
+            <button type="button" class="filter-btn" data-filter="appetizer">مقبلات وسحوات</button>
             <button type="button" class="filter-btn" data-filter="drinks">مشروبات</button>
           </div>
         </div>
@@ -357,8 +365,8 @@
             <svg class="icon"><use href="#i-bowl"></use></svg>
           </div>
           <div class="about-facts">
-            <div class="fact"><strong>١٢</strong><span>صنفاً في القائمة</span></div>
-            <div class="fact"><strong>٤</strong><span>أقسام رئيسية</span></div>
+            <div class="fact"><strong>٢٢</strong><span>صنفاً في القائمة</span></div>
+            <div class="fact"><strong>٥</strong><span>أقسام رئيسية</span></div>
           </div>
         </div>
         <div class="about-copy reveal">
@@ -431,6 +439,7 @@
           <p class="footer-desc">
             زورونا .. وستجدون الطعم الذي يليق بكم.
             العصيد وجميع المأكولات الشعبية، ودجاج الشواية على أصوله، وخبز ملوح طازج يومياً.
+            <strong class="footer-tagline">لسنا الوحيدون ولكننا الأفضل.</strong>
           </p>
         </div>
 
@@ -484,8 +493,9 @@
       <div class="footer-bottom">
         <div class="footer-rights">© 2026 مطعم ومخبازة وشواية العزعزي — جميع الحقوق محفوظة</div>
         <div class="footer-dev">
-          <span>تطوير وهندسة الموقع:</span>
-          <strong>قاسم أمين العزعزي</strong>
+          <span>تطوير وهندسة الموقع: المهندس / قاسم أمين العزعزي</span>
+          <span class="footer-dev-sep" aria-hidden="true">—</span>
+          <span>خبرة راسخة ومهنية عالية في تصميم وهندسة مواقع الويب.</span>
           <span class="footer-dev-sep" aria-hidden="true">—</span>
           <a href="tel:+967773271464">هاتف: 773271464</a>
         </div>

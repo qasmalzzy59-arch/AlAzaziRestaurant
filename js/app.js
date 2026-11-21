@@ -14,15 +14,16 @@ const CONFIG = {
 };
 
 const STORAGE_KEYS = {
-  CART: "alazazi_cart_v2",
-  ORDERS: "alazazi_orders_v2",
-  BOOKINGS: "alazazi_bookings_v2"
+  CART: "alazazi_cart_v3",
+  ORDERS: "alazazi_orders_v3",
+  BOOKINGS: "alazazi_bookings_v3"
 };
 
 const CATEGORIES = {
   popular: "أطباق شعبية",
   grilled: "شواية ومشويات",
-  appetizer: "مقبلات",
+  bakery: "مخبازة",
+  appetizer: "مقبلات وسحوات",
   drinks: "مشروبات"
 };
 
@@ -31,115 +32,75 @@ const CATEGORIES = {
   ضع الصورة داخل مجلد images/ بنفس اسم الملف في الخاصية img لكل صنف.
   مثال: images/asid.jpg — وإن لم توجد الصورة يظهر أيقونة الصنف تلقائياً.
 */
-const MENU = [
-  {
-    id: 1,
-    name: "عصيد",
-    price: 3500,
-    cat: "popular",
-    icon: "i-bowl",
-    img: "images/asid.jpg",
-    desc: "عصيد على أصوله يُقدّم ساخناً مع المرق واللحم أو الدجاج حسب اختيارك."
-  },
-  {
-    id: 2,
-    name: "روز مضغوط",
-    price: 4000,
-    cat: "popular",
-    icon: "i-rice",
-    img: "images/roz-madghout.jpg",
-    desc: "روز مضغوط بنكهة البهارات الأصيلة، يُقدّم مع الدجاج أو اللحم."
-  },
-  {
-    id: 3,
-    name: "روز عادي",
-    price: 3000,
-    cat: "popular",
-    icon: "i-rice",
-    img: "images/roz.jpg",
-    desc: "روز أبيض منسّق بطبقة خفيفة من البهارات، مناسب مع جميع الأطباق."
-  },
-  {
-    id: 4,
-    name: "فتة موز",
-    price: 3500,
-    cat: "popular",
-    icon: "i-bowl",
-    img: "images/fattah-mawz.jpg",
-    desc: "فتة الموز الشعبية بمزيجها الأصيل، وجبة دسمة بطعم مميز."
-  },
-  {
-    id: 5,
-    name: "فتة عرائسي",
-    price: 4000,
-    cat: "popular",
-    icon: "i-bowl",
-    img: "images/fattah-arayes.jpg",
-    desc: "فتة العرائسي المحضّرة على الطريقة الشعبية بنكهة غنية."
-  },
-  {
-    id: 6,
-    name: "دجاج شوية",
-    price: 5000,
-    cat: "grilled",
-    icon: "i-flame",
-    img: "images/chicken-shawiya.jpg",
-    desc: "دجاج شوية بتتبيلة خاصة، طري ومشبع بطعم الشواية الأصيل."
-  },
-  {
-    id: 7,
-    name: "دجاج مسلوق",
-    price: 4500,
-    cat: "grilled",
-    icon: "i-bowl",
-    img: "images/chicken-maslouq.jpg",
-    desc: "دجاج مسلوق بطريقة تقليدية مع المرق، خفيف وغني بالطعم."
-  },
-  {
-    id: 8,
-    name: "دجاج حنيد",
-    price: 5500,
-    cat: "grilled",
-    icon: "i-flame",
-    img: "images/chicken-haneed.jpg",
-    desc: "دجاج حنيد مشوي ببطء على الطريقة التقليدية، طعم أصيل لا يُنسى."
-  },
-  {
-    id: 9,
-    name: "دجاج فحم",
-    price: 6000,
-    cat: "grilled",
-    icon: "i-flame",
-    img: "images/chicken-faham.jpg",
-    desc: "دجاج فحم مشوي على الجمر، برائحة الشواية وطعم لا يُقاوم."
-  },
-  {
-    id: 10,
-    name: "سحاوق جبن",
-    price: 1500,
-    cat: "appetizer",
-    icon: "i-chili",
-    img: "images/sahawiq-cheese.jpg",
-    desc: "سحاوق بالجبن الطازج، مقبلات حارة بنكهة متوازنة."
-  },
-  {
-    id: 11,
-    name: "سحاوق عادي",
-    price: 1000,
-    cat: "appetizer",
-    icon: "i-chili",
-    img: "images/sahawiq.jpg",
-    desc: "سحاوق تقليدي بالطماطم والفلفل، مناسب مع جميع الأطباق."
-  },
-  {
-    id: 12,
-    name: "المشروبات الغازية",
-    price: 500,
-    cat: "drinks",
-    icon: "i-cup",
-    img: "images/soft-drinks.jpg",
-    desc: "مشروب غازي مبرّد يُقدّم مع وجبتك."
+const CHICKEN_VARIANTS = [
+  { key: "quarter", label: "ربع", price: 1500 },
+  { key: "half", label: "نص", price: 3000 },
+  { key: "whole", label: "حبة", price: 6000 },
+  { key: "whole+quarter", label: "حبة وربع", price: 7500 },
+  { key: "whole+half", label: "حبة ونص", price: 9000 },
+  { key: "two", label: "حبتين", price: 12000 },
+  { key: "two+half", label: "حبتين ونص", price: 15000 }
+];
+
+function standardVariants(dish) {
+  const factors = [0.5, 1, 1.5, 2, 2.5];
+  const labels = ["نصف", "واحد", "واحد ونص", "اثنين", "اثنين ونص"];
+  return factors.map((f, i) => ({
+    key: String(f),
+    label: labels[i],
+    price: Math.round(dish.price * f)
+  }));
+}
+
+function integerVariants(dish, max = 4) {
+  const out = [];
+  for (let i = 1; i <= max; i += 1) {
+    out.push({ key: String(i), label: i === 1 ? "واحد" : String(i), price: dish.price * i });
   }
+  return out;
+}
+
+function getVariants(dish) {
+  if (!dish) return [];
+  if (Array.isArray(dish.variants)) return dish.variants;
+  if (dish.cat === "grilled" && /دجاج/.test(dish.name)) return CHICKEN_VARIANTS;
+  if (/بيبسي/.test(dish.name)) return integerVariants(dish, 6);
+  return standardVariants(dish);
+}
+
+function variantPrice(dish, key) {
+  const v = getVariants(dish).find((x) => x.key === key);
+  return v ? v.price : (dish ? dish.price : 0);
+}
+
+function variantLabel(dish, key) {
+  const v = getVariants(dish).find((x) => x.key === key);
+  return v ? v.label : key;
+}
+
+const MENU = [
+  { id: 1, name: "دجاج شواية", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-shawiya.jpg", desc: "دجاج شواية حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 2, name: "دجاج مسلوق", price: 6000, cat: "grilled", icon: "i-bowl", img: "images/chicken-maslouq.jpg", desc: "دجاج مسلوق حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 3, name: "دجاج حنيد", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-haneed.jpg", desc: "دجاج حنيد حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 4, name: "دجاج فحم", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-faham.jpg", desc: "دجاج فحم حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 5, name: "أرز أبيض", price: 1000, cat: "popular", icon: "i-rice", img: "images/rice-white.jpg", desc: "أرز أبيض (واحد 1000 / نصف 500)." },
+  { id: 6, name: "أرز مضغوط", price: 1000, cat: "popular", icon: "i-rice", img: "images/rice-madghout.jpg", desc: "أرز مضغوط (واحد 1000 / نصف 500)." },
+  { id: 7, name: "نفر عصيد", price: 1000, cat: "popular", icon: "i-bowl", img: "images/aseed.jpg", desc: "نفر عصيد (واحد 1000 / نصف 500)." },
+  { id: 8, name: "نفر مشكل فرن", price: 1000, cat: "bakery", icon: "i-bread", img: "images/mixed-oven.jpg", desc: "مشكل فرن طازج (واحد 1000 / نصف 500)." },
+  { id: 9, name: "نفر مشكل عادي", price: 1000, cat: "popular", icon: "i-bowl", img: "images/mixed.jpg", desc: "نفر مشكل عادي (واحد 1000 / نصف 500)." },
+  { id: 10, name: "ربع عقدة", price: 3000, cat: "popular", icon: "i-bowl", img: "images/aqdah.jpg", desc: "ربع عقدة (واحد 3000 / نصف 1500)." },
+  { id: 11, name: "واحد ملوح", price: 1000, cat: "bakery", icon: "i-bread", img: "images/maluh.jpg", desc: "خبز ملوح طازج (واحد 1000 / نصف 500)." },
+  { id: 12, name: "نفر ملوخية", price: 1000, cat: "popular", icon: "i-bowl", img: "images/molokhia.jpg", desc: "نفر ملوخية (واحد 1000 / نصف 500)." },
+  { id: 13, name: "نفر فتة مرق", price: 1000, cat: "popular", icon: "i-bowl", img: "images/fattah-maraq.jpg", desc: "فتة مرق (واحد 1000 / نصف 500)." },
+  { id: 14, name: "نفر فتة عريكة", price: 2500, cat: "popular", icon: "i-bowl", img: "images/fattah-arika.jpg", desc: "فتة عريكة (واحد 2500 / نصف 1250)." },
+  { id: 15, name: "نفر فتة موز", price: 2500, cat: "popular", icon: "i-bowl", img: "images/fattah-mawz.jpg", desc: "فتة موز (واحد 2500 / نصف 1250)." },
+  { id: 16, name: "حبة بيبسي", price: 500, cat: "drinks", icon: "i-cup", img: "images/pepsi.jpg", desc: "مشروب بيبسي (واحد 500 / نصف 250)." },
+  { id: 17, name: "نفر سلطة", price: 1000, cat: "appetizer", icon: "i-bowl", img: "images/salad.jpg", desc: "سلطة طازجة (واحد 1000 / نصف 500)." },
+  { id: 18, name: "زبادي مع السحاوق", price: 800, cat: "appetizer", icon: "i-chili", img: "images/yogurt-sahawiq.jpg", desc: "زبادي مع سحاوق (واحد 800 / نصف 400)." },
+  { id: 19, name: "حقين مع السحاوق", price: 1500, cat: "appetizer", icon: "i-chili", img: "images/haqeen.jpg", desc: "حقين مع سحاوق (واحد 1500 / نصف 750)." },
+  { id: 20, name: "قشطة مع السحاوق", price: 1000, cat: "appetizer", icon: "i-chili", img: "images/qishta.jpg", desc: "قشطة مع سحاوق (واحد 1000 / نصف 500)." },
+  { id: 21, name: "تونة زبادي سحاوق", price: 2500, cat: "appetizer", icon: "i-chili", img: "images/tuna-yogurt.jpg", desc: "تونة + زبادي + سحاوق (واحد 2500 / نصف 1250)." },
+  { id: 22, name: "تونة قلابة مع المشكل", price: 3000, cat: "appetizer", icon: "i-chili", img: "images/tuna-mixed.jpg", desc: "تونة قلابة مع المشكل (واحد 3000 / نصف 1500)." }
 ];
 
 const MENU_BY_ID = new Map(MENU.map((dish) => [dish.id, dish]));
@@ -175,11 +136,17 @@ function sanitizeCart(raw) {
   const clean = new Map();
   for (const entry of raw) {
     const id = Number(entry && entry.id);
+    const variant = String((entry && entry.variant) || "");
     const qty = Math.floor(Number(entry && entry.qty));
-    if (!MENU_BY_ID.has(id) || !Number.isFinite(qty) || qty < 1) continue;
-    clean.set(id, (clean.get(id) || 0) + qty);
+    const dish = MENU_BY_ID.get(id);
+    if (!dish || !getVariants(dish).some((v) => v.key === variant) || !Number.isFinite(qty) || qty < 1) continue;
+    const key = `${id}::${variant}`;
+    clean.set(key, (clean.get(key) || 0) + qty);
   }
-  return Array.from(clean, ([id, qty]) => ({ id, qty }));
+  return Array.from(clean, ([key, qty]) => {
+    const parts = key.split("::");
+    return { id: Number(parts[0]), variant: parts[1], qty: Math.min(99, qty) };
+  });
 }
 
 function fmt(value) {
@@ -203,14 +170,14 @@ function iconMarkup(iconId, extraClass = "") {
 /* ---------------- السلة ---------------- */
 
 function cartQuantity(id) {
-  const entry = state.cart.find((item) => item.id === id);
-  return entry ? entry.qty : 0;
+  return state.cart.filter((item) => item.id === id).reduce((sum, item) => sum + item.qty, 0);
 }
 
 function updateCartTotals() {
   state.subtotal = state.cart.reduce((sum, entry) => {
     const dish = MENU_BY_ID.get(entry.id);
-    return dish ? sum + dish.price * entry.qty : sum;
+    if (!dish) return sum;
+    return sum + variantPrice(dish, entry.variant) * entry.qty;
   }, 0);
   state.total = state.subtotal;
 }
@@ -226,49 +193,49 @@ function updateBadges() {
   }
 }
 
-function addToCart(id, amount = 1) {
+function addToCart(id, variant, amount = 1) {
   const dish = MENU_BY_ID.get(id);
   if (!dish) return;
-  const entry = state.cart.find((item) => item.id === id);
+  const variants = getVariants(dish);
+  if (!variants.some((v) => v.key === variant)) return;
+  const qtyToAdd = Math.min(99, Math.max(1, Math.floor(Number(amount) || 1)));
+  const entry = state.cart.find((item) => item.id === id && item.variant === variant);
   if (entry) {
-    entry.qty = Math.min(99, entry.qty + amount);
+    entry.qty = Math.min(99, entry.qty + qtyToAdd);
   } else {
-    state.cart.push({ id, qty: 1 });
+    state.cart.push({ id, variant, qty: qtyToAdd });
   }
   persistCart();
   updateCartTotals();
   renderCart();
   updateBadges();
-  syncCardQuantity(id);
-  showToast(`أُضيف «${dish.name}» إلى السلة`);
+  showToast(`أُضيف «${dish.name} — ${variantLabel(dish, variant)}» إلى السلة`);
 }
 
-function changeQuantity(id, delta) {
-  const entry = state.cart.find((item) => item.id === id);
+function changeQuantity(id, variant, delta) {
+  const entry = state.cart.find((item) => item.id === id && item.variant === variant);
   if (!entry) {
-    if (delta > 0) addToCart(id, delta);
+    if (delta > 0) addToCart(id, variant, delta);
     return;
   }
   entry.qty = Math.min(99, entry.qty + delta);
   if (entry.qty < 1) {
-    state.cart = state.cart.filter((item) => item.id !== id);
+    state.cart = state.cart.filter((item) => !(item.id === id && item.variant === variant));
   }
   persistCart();
   updateCartTotals();
   renderCart();
   updateBadges();
-  syncCardQuantity(id);
 }
 
-function removeFromCart(id) {
+function removeFromCart(id, variant) {
   const dish = MENU_BY_ID.get(id);
-  state.cart = state.cart.filter((item) => item.id !== id);
+  state.cart = state.cart.filter((item) => !(item.id === id && item.variant === variant));
   persistCart();
   updateCartTotals();
   renderCart();
   updateBadges();
-  syncCardQuantity(id);
-  if (dish) showToast(`أُزيل «${dish.name}» من السلة`);
+  if (dish) showToast(`أُزيل «${dish.name} — ${variantLabel(dish, variant)}» من السلة`);
 }
 
 function clearCart() {
@@ -277,7 +244,6 @@ function clearCart() {
   updateCartTotals();
   renderCart();
   updateBadges();
-  for (const dish of MENU) syncCardQuantity(dish.id);
   showToast("تم إفراغ السلة");
 }
 
@@ -320,14 +286,17 @@ function renderCart() {
     for (const entry of state.cart) {
       const dish = MENU_BY_ID.get(entry.id);
       if (!dish) continue;
+      const vPrice = variantPrice(dish, entry.variant);
+      const vLabel = variantLabel(dish, entry.variant);
       const row = document.createElement("div");
       row.className = "cart-item";
       row.dataset.id = String(dish.id);
+      row.dataset.variant = entry.variant;
       row.innerHTML = `
         <span class="cart-item-img">${iconMarkup(dish.icon)}</span>
         <div class="cart-item-info">
-          <strong>${dish.name}</strong>
-          <span class="cart-item-price">${fmt(dish.price * entry.qty)}</span>
+          <strong>${dish.name} — ${vLabel}</strong>
+          <span class="cart-item-price">${entry.qty} × ${fmt(vPrice)} = ${fmt(vPrice * entry.qty)}</span>
         </div>
         <div class="cart-item-actions">
           <span class="qty-box">
@@ -337,9 +306,9 @@ function renderCart() {
           </span>
           <button type="button" class="cart-item-remove" aria-label="حذف ${dish.name}">${iconMarkup("i-trash")}</button>
         </div>`;
-      $(".qty-plus", row).addEventListener("click", () => changeQuantity(dish.id, 1));
-      $(".qty-minus", row).addEventListener("click", () => changeQuantity(dish.id, -1));
-      $(".cart-item-remove", row).addEventListener("click", () => removeFromCart(dish.id));
+      $(".qty-plus", row).addEventListener("click", () => changeQuantity(dish.id, entry.variant, 1));
+      $(".qty-minus", row).addEventListener("click", () => changeQuantity(dish.id, entry.variant, -1));
+      $(".cart-item-remove", row).addEventListener("click", () => removeFromCart(dish.id, entry.variant));
       fragment.appendChild(row);
     }
     items.replaceChildren(fragment);
@@ -354,41 +323,91 @@ function renderCart() {
 /* ---------------- القائمة ---------------- */
 
 function renderDishCard(dish) {
+  const variants = getVariants(dish);
+  const defaultVariant = (variants.find((v) => v.key === "whole" || v.key === "1") || variants[0] || {}).key;
   const card = document.createElement("article");
   card.className = "dish-card";
   card.dataset.id = String(dish.id);
   card.dataset.cat = dish.cat;
-  const qty = cartQuantity(dish.id);
   const category = CATEGORIES[dish.cat] || "";
   const photo = dish.img
     ? `<img class="dish-photo" src="${dish.img}" alt="${dish.name}" loading="lazy" decoding="async" style="opacity:0" onload="this.style.opacity='1'" onerror="this.remove()">`
     : "";
 
+  const variantOptions = variants.map((v) => `<option value="${v.key}">${v.label} — ${fmt(v.price)}</option>`).join("");
+
   card.innerHTML = `
     <div class="dish-media">
-      <span class="dish-fallback">${iconMarkup(dish.icon, "icon-lg")}</span>
+      <span class="dish-fallback">
+        <span class="dish-fallback-icon">${iconMarkup(dish.icon, "icon-lg")}</span>
+        <span class="dish-fallback-name">${dish.name}</span>
+      </span>
       ${photo}
       <span class="dish-cat">${category}</span>
     </div>
     <div class="dish-body">
-      <div class="dish-head">
-        <h3 class="dish-name">${dish.name}</h3>
-        <span class="dish-price">${fmt(dish.price)}</span>
+      <h3 class="dish-name">${dish.name}</h3>
+      <div class="dish-variant">
+        <label for="variant-${dish.id}">التقسيم / الكمية</label>
+        <select id="variant-${dish.id}" class="dish-variant-select">${variantOptions}</select>
       </div>
+      <span class="dish-price" data-price>${fmt(variantPrice(dish, defaultVariant))}</span>
       <p class="dish-desc">${dish.desc || ""}</p>
       <div class="dish-footer">
         <span class="qty-box">
-          <button type="button" class="qty-btn qty-minus" aria-label="إنقاص عدد ${dish.name}" ${qty <= 0 ? "disabled" : ""}>${iconMarkup("i-minus")}</button>
-          <span class="qty-num">${qty}</span>
-          <button type="button" class="qty-btn qty-plus" aria-label="زيادة عدد ${dish.name}">${iconMarkup("i-plus")}</button>
+          <button type="button" class="qty-btn qty-minus" aria-label="إنقاص العدد">${iconMarkup("i-minus")}</button>
+          <span class="qty-num">1</span>
+          <button type="button" class="qty-btn qty-plus" aria-label="زيادة العدد">${iconMarkup("i-plus")}</button>
         </span>
         <button type="button" class="dish-add-btn">${iconMarkup("i-plus")} إضافة للسلة</button>
       </div>
     </div>`;
 
-  $(".qty-plus", card).addEventListener("click", () => changeQuantity(dish.id, 1));
-  $(".qty-minus", card).addEventListener("click", () => changeQuantity(dish.id, -1));
-  $(".dish-add-btn", card).addEventListener("click", () => addToCart(dish.id));
+  const select = $(".dish-variant-select", card);
+  const priceEl = $("[data-price]", card);
+  const qtyNum = $(".qty-num", card);
+  const minusBtn = $(".qty-minus", card);
+  const plusBtn = $(".qty-plus", card);
+  const addBtn = $(".dish-add-btn", card);
+
+  if (select) select.value = defaultVariant;
+
+  let localQty = 1;
+  function updatePrice() {
+    if (priceEl && select) {
+      priceEl.textContent = fmt(variantPrice(dish, select.value));
+    }
+    if (qtyNum) qtyNum.textContent = String(localQty);
+  }
+
+  if (select) {
+    select.addEventListener("change", updatePrice);
+  }
+  if (minusBtn) {
+    minusBtn.addEventListener("click", () => {
+      if (localQty > 1) {
+        localQty -= 1;
+        updatePrice();
+      }
+    });
+  }
+  if (plusBtn) {
+    plusBtn.addEventListener("click", () => {
+      if (localQty < 99) {
+        localQty += 1;
+        updatePrice();
+      }
+    });
+  }
+  if (addBtn) {
+    addBtn.addEventListener("click", () => {
+      if (select) addToCart(dish.id, select.value, localQty);
+      localQty = 1;
+      updatePrice();
+    });
+  }
+
+  updatePrice();
   return card;
 }
 
@@ -469,7 +488,9 @@ function buildOrderSummaryHtml() {
   const rows = state.cart.map((entry) => {
     const dish = MENU_BY_ID.get(entry.id);
     if (!dish) return "";
-    return `<div class="order-summary-row"><strong>${dish.name} × ${entry.qty}</strong><span>${fmt(dish.price * entry.qty)}</span></div>`;
+    const vPrice = variantPrice(dish, entry.variant);
+    const vLabel = variantLabel(dish, entry.variant);
+    return `<div class="order-summary-row"><strong>${dish.name} — ${vLabel} × ${entry.qty}</strong><span>${fmt(vPrice * entry.qty)}</span></div>`;
   }).join("");
   return `${rows}<div class="order-summary-row total"><strong>الإجمالي</strong><span>${fmt(state.total)}</span></div>`;
 }
@@ -483,11 +504,13 @@ function buildOrderMessage(data) {
   lines.push(`العنوان / الموقع: ${data.address}`);
   lines.push(`طريقة الاستلام: ${data.delivery === "delivery" ? "توصيل" : "داخل المطعم (استلام مباشر)"}`);
   lines.push("الأصناف:");
-  for (const entry of state.cart) {
-    const dish = MENU_BY_ID.get(entry.id);
-    if (!dish) continue;
-    lines.push(`• ${dish.name} × ${entry.qty} — ${fmt(dish.price * entry.qty)}`);
-  }
+   for (const entry of state.cart) {
+     const dish = MENU_BY_ID.get(entry.id);
+     if (!dish) continue;
+     const vPrice = variantPrice(dish, entry.variant);
+     const vLabel = variantLabel(dish, entry.variant);
+     lines.push(`• ${dish.name} — ${vLabel} × ${entry.qty} — ${fmt(vPrice * entry.qty)}`);
+   }
   lines.push(`الإجمالي: ${fmt(state.total)} (بدون ضريبة)`);
   return lines.join("\n");
 }
@@ -595,10 +618,10 @@ function handleConfirmOrder() {
     phone,
     address: ($("#modalAddress")?.value || "").trim() || CONFIG.ADDRESS,
     delivery: $("#modalDelivery")?.value || "pickup",
-    items: state.cart.map((entry) => {
-      const dish = MENU_BY_ID.get(entry.id);
-      return { id: entry.id, name: dish?.name || "", price: dish?.price || 0, qty: entry.qty };
-    }),
+     items: state.cart.map((entry) => {
+       const dish = MENU_BY_ID.get(entry.id);
+       return { id: entry.id, name: dish?.name || "", variant: entry.variant, variantLabel: variantLabel(dish, entry.variant), price: variantPrice(dish, entry.variant), qty: entry.qty };
+     }),
     total: state.total
   };
 
@@ -933,7 +956,55 @@ function setupReveal() {
   for (const element of elements) observer.observe(element);
 }
 
-/* ---------------- التشغيل ---------------- */
+const HERO_PHRASES = [
+  "لسنا الوحيدون ولكننا الأفضل",
+  "الطعم الأصيل .. سرّ رضائكم",
+  "زورونا .. وستجدون الطعم الذي يليق بكم"
+];
+
+function setupHeroTyped() {
+  const el = document.getElementById("heroTypedText");
+  const caret = document.querySelector(".hero-caret");
+  if (!el) return;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) {
+    el.textContent = HERO_PHRASES[0];
+    if (caret) caret.style.display = "none";
+    return;
+  }
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+  const typeSpeed = 70;
+  const deleteSpeed = 40;
+  const pause = 1900;
+
+  function tick() {
+    const phrase = HERO_PHRASES[phraseIndex];
+    if (!deleting) {
+      charIndex += 1;
+      el.textContent = phrase.slice(0, charIndex);
+      if (charIndex === phrase.length) {
+        deleting = true;
+        window.setTimeout(tick, pause);
+        return;
+      }
+      window.setTimeout(tick, typeSpeed);
+    } else {
+      charIndex -= 1;
+      el.textContent = phrase.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % HERO_PHRASES.length;
+        window.setTimeout(tick, 450);
+        return;
+      }
+      window.setTimeout(tick, deleteSpeed);
+    }
+  }
+  el.textContent = "";
+  window.setTimeout(tick, 700);
+}
 
 function init() {
   state.cart = sanitizeCart(safeRead(STORAGE_KEYS.CART, []));
@@ -948,6 +1019,7 @@ function init() {
   setupAnchorLinks();
   setupScrollSpy();
   setupReveal();
+  setupHeroTyped();
   setupReservation();
 
   for (const button of $all(".filter-btn")) {
