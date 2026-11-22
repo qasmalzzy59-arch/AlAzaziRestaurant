@@ -7,6 +7,7 @@
 
 const CONFIG = {
   NAME: "مطعم ومخبازة وشواية العزعزي",
+  MAPS: "https://goo.gl/maps/5kPKsibbquCDMv3R9",
   WHATSAPP: "967777698379",
   WHATSAPP_DISPLAY: "777698379",
   PHONES: ["736436022", "718533177"],
@@ -79,22 +80,22 @@ function variantLabel(dish, key) {
 }
 
 const MENU = [
-  { id: 1, name: "دجاج شواية", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-shawiya.jpg", desc: "دجاج شواية حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
-  { id: 2, name: "دجاج مسلوق", price: 6000, cat: "grilled", icon: "i-bowl", img: "images/chicken-maslouq.jpg", desc: "دجاج مسلوق حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
-  { id: 3, name: "دجاج حنيد", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-haneed.jpg", desc: "دجاج حنيد حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
-  { id: 4, name: "دجاج فحم", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-faham.jpg", desc: "دجاج فحم حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 1, name: "دجاج شواية", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-shawaya.jpg", desc: "دجاج شواية حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 2, name: "دجاج مسلوق", price: 6000, cat: "grilled", icon: "i-bowl", img: "images/chicken-boiled.jpg", desc: "دجاج مسلوق حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 3, name: "دجاج حنيد", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-haneedh.jpg", desc: "دجاج حنيد حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
+  { id: 4, name: "دجاج فحم", price: 6000, cat: "grilled", icon: "i-flame", img: "images/chicken-charcoal.jpg", desc: "دجاج فحم حسب التقسيم المختار.", variants: CHICKEN_VARIANTS },
   { id: 5, name: "أرز أبيض", price: 1000, cat: "popular", icon: "i-rice", img: "images/rice-white.jpg", desc: "أرز أبيض (واحد 1000 / نصف 500)." },
   { id: 6, name: "أرز مضغوط", price: 1000, cat: "popular", icon: "i-rice", img: "images/rice-madghout.jpg", desc: "أرز مضغوط (واحد 1000 / نصف 500)." },
   { id: 7, name: "نفر عصيد", price: 1000, cat: "popular", icon: "i-bowl", img: "images/aseed.jpg", desc: "نفر عصيد (واحد 1000 / نصف 500)." },
   { id: 8, name: "نفر مشكل فرن", price: 1000, cat: "bakery", icon: "i-bread", img: "images/mixed-oven.jpg", desc: "مشكل فرن طازج (واحد 1000 / نصف 500)." },
-  { id: 9, name: "نفر مشكل عادي", price: 1000, cat: "popular", icon: "i-bowl", img: "images/mixed.jpg", desc: "نفر مشكل عادي (واحد 1000 / نصف 500)." },
+  { id: 9, name: "نفر مشكل عادي", price: 1000, cat: "popular", icon: "i-bowl", img: "images/mixed-regular.jpg", desc: "نفر مشكل عادي (واحد 1000 / نصف 500)." },
   { id: 10, name: "ربع عقدة", price: 3000, cat: "popular", icon: "i-bowl", img: "images/aqdah.jpg", desc: "ربع عقدة (واحد 3000 / نصف 1500)." },
   { id: 11, name: "واحد ملوح", price: 1000, cat: "bakery", icon: "i-bread", img: "images/maluh.jpg", desc: "خبز ملوح طازج (واحد 1000 / نصف 500)." },
   { id: 12, name: "نفر ملوخية", price: 1000, cat: "popular", icon: "i-bowl", img: "images/molokhia.jpg", desc: "نفر ملوخية (واحد 1000 / نصف 500)." },
   { id: 13, name: "نفر فتة مرق", price: 1000, cat: "popular", icon: "i-bowl", img: "images/fattah-maraq.jpg", desc: "فتة مرق (واحد 1000 / نصف 500)." },
   { id: 14, name: "نفر فتة عريكة", price: 2500, cat: "popular", icon: "i-bowl", img: "images/fattah-arika.jpg", desc: "فتة عريكة (واحد 2500 / نصف 1250)." },
   { id: 15, name: "نفر فتة موز", price: 2500, cat: "popular", icon: "i-bowl", img: "images/fattah-mawz.jpg", desc: "فتة موز (واحد 2500 / نصف 1250)." },
-  { id: 16, name: "حبة بيبسي", price: 500, cat: "drinks", icon: "i-cup", img: "images/pepsi.jpg", desc: "مشروب بيبسي (واحد 500 / نصف 250)." },
+  { id: 16, name: "حبة بيبسي", price: 500, cat: "drinks", icon: "i-cup", img: "images/pepsi.jpg", desc: "مشروب بيبسي — تُطلب بالعدد الكامل فقط (1، 2، 3...)." },
   { id: 17, name: "نفر سلطة", price: 1000, cat: "appetizer", icon: "i-bowl", img: "images/salad.jpg", desc: "سلطة طازجة (واحد 1000 / نصف 500)." },
   { id: 18, name: "زبادي مع السحاوق", price: 800, cat: "appetizer", icon: "i-chili", img: "images/yogurt-sahawiq.jpg", desc: "زبادي مع سحاوق (واحد 800 / نصف 400)." },
   { id: 19, name: "حقين مع السحاوق", price: 1500, cat: "appetizer", icon: "i-chili", img: "images/haqeen.jpg", desc: "حقين مع سحاوق (واحد 1500 / نصف 750)." },

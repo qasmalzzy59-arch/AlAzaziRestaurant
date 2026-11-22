@@ -569,6 +569,77 @@ a {
   height: 1.2rem;
 }
 
+/* ---------------- Hero marquee ---------------- */
+
+.hero-marquee {
+  display: block;
+  margin-top: 1.35rem;
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 77, 0.4);
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, rgba(11, 25, 44, 0.96), rgba(107, 29, 29, 0.92), rgba(11, 25, 44, 0.96));
+  color: #FAF8F5;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(11, 25, 44, 0.22);
+  direction: ltr;
+}
+
+.hero-marquee:hover {
+  border-color: var(--gold);
+}
+
+.hero-marquee:hover .hero-marquee-track,
+.hero-marquee:focus-within .hero-marquee-track {
+  animation-play-state: paused;
+}
+
+.hero-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 0.62rem 0;
+  white-space: nowrap;
+  direction: ltr;
+  animation: heroMarquee 20s linear infinite;
+  will-change: transform;
+}
+
+.hero-marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex: none;
+}
+
+.hero-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 800;
+  font-size: 0.86rem;
+  color: #F3E7C7;
+  direction: rtl;
+}
+
+.hero-marquee-item .icon {
+  color: var(--gold);
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+}
+
+@keyframes heroMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee-track {
+    animation: none;
+  }
+}
+
 /* ---------------- Hero ---------------- */
 
 .hero {
@@ -1266,6 +1337,16 @@ a {
   line-height: 1.75;
 }
 
+.dish-price {
+  display: block;
+  margin: 0.35rem 0 0.4rem;
+  color: var(--gold-ink);
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
 .dish-footer {
   display: flex;
   align-items: center;
@@ -1914,6 +1995,18 @@ textarea::placeholder {
 .footer-dev strong {
   color: var(--gold-light);
   font-weight: 800;
+}
+
+.footer-dev .dev-name {
+  color: var(--gold-light);
+  font-weight: 900;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid rgba(201, 162, 77, 0.45);
+  border-radius: 8px;
+  background: rgba(201, 162, 77, 0.12);
+  box-shadow: 0 0 0 1px rgba(201, 162, 77, 0.08) inset;
 }
 
 .footer-dev a {
